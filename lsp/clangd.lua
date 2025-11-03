@@ -68,7 +68,7 @@ local clangd = {
     '--header-insertion=iwyu',
     '--completion-style=detailed',
     '--function-arg-placeholders=true',
-    '-j=4',
+    '-j=6',
     '--fallback-style="{BasedOnStyle: LLVM, IndentWidth: 4}"',
   },
 

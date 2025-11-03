@@ -1,6 +1,10 @@
 require('catppuccin').setup {
   flavour = 'mocha',
   transparent_background = true,
+  float = {
+    transparent = true,
+    solid = true,
+  },
   auto_integrations = true,
   custom_highlights = function()
     return {

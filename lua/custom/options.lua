@@ -13,13 +13,10 @@ vim.opt.autoread = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.diagnostic.config {
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '󰌵',
-    },
-  },
-}
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
+vim.opt.undofile = true
+
+require 'custom.config.folding'

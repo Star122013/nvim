@@ -8,6 +8,7 @@ require('conform').setup {
     lua = { 'stylua' },
     cpp = { 'clang-format' },
     c = { 'clang-format' },
+    typst = { 'typstyle' },
     -- kdl = { "kdlfmt" },
     -- Conform will run multiple formatters sequentially
     python = { 'isort', 'black' },

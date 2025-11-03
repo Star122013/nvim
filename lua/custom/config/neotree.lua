@@ -9,7 +9,7 @@ require('neo-tree').setup {
     winbar = true,
     statusline = false,
     show_separator_on_edge = true,
-    separator = { left = ' ', right = ' ' },
+    separator = { left = '', right = '' },
     sources = {
       { source = 'filesystem', display_name = ' 󰉓 Files' },
       { source = 'buffers', display_name = ' 󰈙 Buf' },
