@@ -1,8 +1,5 @@
 vim.diagnostic.config {
-  virtual_text = {
-    spacing = 5,
-    prefix = '◍ ',
-  },
+  virtual_text = true,
   virtual_lines = { current_line = true },
   underline = true,
   update_in_insert = true,
