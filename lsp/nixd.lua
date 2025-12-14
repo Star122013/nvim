@@ -15,8 +15,11 @@ return {
         nixos = {
           expr = '(builtins.getFlake ("git+file://" + toString ~/nix-config/.)).nixosConfigurations.Moon.options',
         },
-        home_manager = {
-          expr = '(builtins.getFlake (builtins.toString ~/nix-config/.)).nixosConfigurations.Moon.options.home-manager.users.type.getSubOptions []',
+        flake_parts = {
+          expr = '(builtins.getFlake ("git+file://" + toString ~/nix-config/.)).debug.options',
+        },
+        flake_parts2 = {
+          expr = '(builtins.getFlake ("git+file://" + toString ~/nix-config/.)).currentSystem.options',
         },
       },
     },
