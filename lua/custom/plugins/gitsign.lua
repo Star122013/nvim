@@ -2,34 +2,51 @@ return {
   'lewis6991/gitsigns.nvim',
   event = { 'BufReadPost', 'BufNewFile' },
   opts = {
-    -- Rose-Pine Dawn 在浅色背景下，粗线条比符号看起来更整洁
+    -- 符号配置：Catppuccin Mocha 这种现代主题，
+    -- 使用居中的粗线条 '┃' 往往比靠左的色块 '▎' 看起来更有质感且对齐更准。
     signs = {
-      add = { text = '▎' }, -- 这种竖线比 '|' 更厚实一点，看起来很有质感
-      change = { text = '▎' },
-      delete = { text = ' ' }, -- 删除时不显示符号，或者用下划线 '_'
+      add = { text = '┃' },
+      change = { text = '┃' },
+      delete = { text = '_' },
       topdelete = { text = '‾' },
-      changedelete = { text = '▎' },
-      untracked = { text = '┆' }, -- 虚线表示未追踪
+      changedelete = { text = '~' },
+      untracked = { text = '┆' },
     },
 
-    signcolumn = true, -- 显示左侧指示列
-    numhl = false, -- 不高亮行号（浅色主题下高亮行号会显得太花）
-    linehl = false, -- 不高亮整行背景（保持代码背景纯净）
-    word_diff = false, -- 默认关闭行内单词差异（需要时手动开，不然太乱）
+    -- 暂存区符号（可选，让暂存区看起来不一样）
+    signs_staged = {
+      add = { text = '┃' },
+      change = { text = '┃' },
+      delete = { text = '_' },
+      topdelete = { text = '‾' },
+      changedelete = { text = '~' },
+      untracked = { text = '┆' },
+    },
 
-    current_line_blame = true, -- 开启
+    signcolumn = true, -- 开启左侧符号列
+    numhl = false, -- 保持关闭，Mocha 的行号颜色本身已经很好了
+    linehl = false, -- 保持关闭，避免背景色块显得脏
+    word_diff = false, -- 默认关闭，可以在 on_attach 里加个快捷键切换
+
+    -- Blame 配置
+    current_line_blame = true,
     current_line_blame_opts = {
       virt_text = true,
-      virt_text_pos = 'eol', -- 'eol': 在行尾显示 | 'right_align': 右对齐
-      delay = 500, -- 500ms 延迟：快速移动光标时不闪烁，停下思考时才显示
+      virt_text_pos = 'eol',
+      delay = 300, -- 稍微缩短一点延迟，感觉更跟手（300-500均可）
       ignore_whitespace = false,
+      virt_text_priority = 100,
     },
-    -- 这是一个小技巧：让 blame 的文字颜色稍微淡一点，不要抢代码的风头
-    -- 如果你不设置，Rose-Pine 默认的灰色可能有点深
+
+    -- 格式化 Blame：使用相对时间（如 "3 months ago"）看起来更直观
     current_line_blame_formatter = '<author>, <author_time:%R> • <summary>',
 
+    -- 这是一个关键点：让 Blame 的灰色适配 Mocha 的 Overlay0 颜色
+    -- 下面在 on_attach 或者 init 并没有直接设置颜色的选项
+    -- 颜色通常由 Catppuccin 主题自动接管（见文末说明）
+
     preview_config = {
-      border = 'rounded', -- 圆角窗口，更柔和
+      border = 'rounded', -- 圆角
       style = 'minimal',
       relative = 'cursor',
       row = 0,
@@ -45,14 +62,14 @@ return {
         vim.keymap.set(mode, l, r, opts)
       end
 
-      -- 导航：跳转到上一个/下一个修改处
+      -- 导航：跳转修改
       map('n', ']c', function()
         if vim.wo.diff then
           vim.cmd.normal { ']c', bang = true }
         else
           gitsigns.nav_hunk 'next'
         end
-      end)
+      end, { desc = 'Next Hunk' })
 
       map('n', '[c', function()
         if vim.wo.diff then
@@ -60,12 +77,25 @@ return {
         else
           gitsigns.nav_hunk 'prev'
         end
-      end)
+      end, { desc = 'Prev Hunk' })
 
       -- 常用操作
-      map('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Preview Hunk' }) -- 预览当前块
-      map('n', '<leader>gb', gitsigns.toggle_current_line_blame, { desc = 'Toggle Blame' }) -- 开关 blame
-      map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Diff This' }) -- 与暂存区对比
+      map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Stage Hunk' }) -- 暂存当前块
+      map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Reset Hunk' }) -- 重置当前块
+      map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Stage Buffer' }) -- 暂存整个文件
+      map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Undo Stage' }) -- 撤销暂存
+      map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Preview Hunk' }) -- 预览
+      map('n', '<leader>hb', function()
+        gitsigns.blame_line { full = true }
+      end, { desc = 'Blame Line (Full)' })
+      map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Toggle Blame' }) -- 开关行内blame
+      map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Diff This' })
+      map('n', '<leader>hD', function()
+        gitsigns.diffthis '~'
+      end, { desc = 'Diff This ~' })
+
+      -- 文本对象 (方便用 operator 操作，例如 d ih 删除一个 hunk)
+      map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select Hunk' })
     end,
   },
 }
