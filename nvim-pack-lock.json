@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "catppuccin": {
+      "rev": "ce8d176faa4643e026e597ae3c31db59b63cef09",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "lze": {
+      "rev": "97aeffdbd4e8cd7115c1a3a5123b1ea676e93bf6",
+      "src": "https://github.com/BirdeeHub/lze"
+    },
+    "treesj": {
+      "rev": "186084dee5e9c8eec40f6e39481c723dd567cb05",
+      "src": "git@github.com:Wansmer/treesj"
+    }
+  }
+}
