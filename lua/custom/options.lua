@@ -19,4 +19,4 @@ end)
 vim.opt.undofile = true
 
 vim.opt.fillchars:append { eob = ' ' }
--- require 'custom.config.folding'
+-- require 'custom.config.folding
