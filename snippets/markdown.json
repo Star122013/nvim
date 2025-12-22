@@ -1,0 +1,16 @@
+{
+  "Markdown Front Matter": {
+    "prefix": "frontmatter",
+    "body": [
+      "---",
+      "title: '${1:标题}'",
+      "published: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "draft: ${2|false,true|}",
+      "description: '${3:描述}'",
+      "tags: ['${4:nix}']",
+      "---",
+      "$0"
+    ],
+    "description": "Insert YAML front matter for Markdown files"
+  }
+}

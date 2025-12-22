@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  event = { 'BufReadPost', 'BufNewFile' },
+  event = { 'InsertEnter', 'CmdlineEnter' },
   -- optional: provides snippets for the snippet source
   dependencies = {
     'rafamadriz/friendly-snippets',
@@ -15,8 +15,6 @@ return {
   -- If you use nix, you can build from source using latest nightly rust with:
   -- build = 'nix run .#build-plugin',
 
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
   opts = {
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -78,10 +76,16 @@ return {
           },
         },
       },
-      documentation = { auto_show = true },
+      documentation = {
+        auto_show = true,
+        window = {
+          border = 'rounded',
+        },
+      },
       list = {
         selection = {
           preselect = false,
+          auto_insert = false,
         },
       },
     },
