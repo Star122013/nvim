@@ -9,6 +9,7 @@ require('mini.pairs').setup()
 require('mini.pick').setup()
 require('mini.surround').setup()
 require('mini.bufremove').setup()
+require('mini.cursorword').setup()
 require('mini.files').setup {
   windows = {
     preview = true,

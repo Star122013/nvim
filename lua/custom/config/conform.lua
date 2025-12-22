@@ -10,7 +10,7 @@ require('conform').setup {
     c = { 'clang-format' },
     typst = { 'typstyle' },
     nix = { 'nixfmt' },
-    markdown = { 'mdformat' },
+    -- markdown = { 'mdformat' },
     -- kdl = { "kdlfmt" },
     -- Conform will run multiple formatters sequentially
     python = { 'isort', 'black' },

@@ -21,7 +21,7 @@ require('lazy').setup {
     { import = 'custom.plugins' },
   },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = false },
 
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
