@@ -5,7 +5,7 @@ vim.opt.cursorline = false
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 0
+vim.opt.shiftwidth = 2
 
 vim.opt.autoread = true
 

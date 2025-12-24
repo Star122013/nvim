@@ -101,4 +101,33 @@ return {
       }
     end,
   },
+
+  -- diagnostic
+  {
+    'tiny-inline-diagnostic.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    after = function()
+      require('tiny-inline-diagnostic').setup {
+        preset = 'classic',
+        transparent_bg = true,
+        options = {
+          show_source = true,
+          multilines = true,
+          show_all_diags_on_cursorline = true,
+          enable_on_insert = false,
+          throttle = 20,
+          overflow = {
+            mode = 'wrap',
+          },
+          add_messages = {
+            display_count = true,
+          },
+          format = function(diagnostic)
+            return diagnostic.message
+          end,
+        },
+      }
+      vim.diagnostic.config { virtual_text = false }
+    end,
+  },
 }
