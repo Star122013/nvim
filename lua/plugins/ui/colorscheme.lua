@@ -46,10 +46,19 @@ return {
         },
       },
       color_overrides = {},
-      custom_highlights = {},
       default_integrations = true,
       auto_integrations = true,
     }
     vim.cmd 'colorscheme catppuccin'
+
+    local colors = require('catppuccin.palettes').get_palette 'mocha'
+
+    vim.api.nvim_set_hl(0, 'SnacksRainbow1', { fg = colors.red })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow2', { fg = colors.yellow })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow3', { fg = colors.blue })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow4', { fg = colors.peach })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow5', { fg = colors.green })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow6', { fg = colors.mauve })
+    vim.api.nvim_set_hl(0, 'SnacksRainbow7', { fg = colors.teal })
   end,
 }

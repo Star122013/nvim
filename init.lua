@@ -14,19 +14,27 @@ vim.pack.add({
 
   -- coding
   -- cmp
-  { src = 'https://github.com/Saghen/blink.cmp', version = 'v1.7.0' },
+  { src = 'https://github.com/Saghen/blink.cmp', version = 'v1.8.0' },
   { src = 'https://github.com/rafamadriz/friendly-snippets' },
   { src = 'https://github.com/xzbdmw/colorful-menu.nvim' },
   -- format
   { src = 'https://github.com/stevearc/conform.nvim' },
   -- diagnostics
   { src = 'https://github.com/rachartier/tiny-inline-diagnostic.nvim' },
+  -- comment
+  { src = 'https://github.com/folke/ts-comments.nvim' },
 
   -- utils
   { src = 'https://github.com/nvim-mini/mini.nvim' },
+  { src = 'https://github.com/folke/snacks.nvim' },
+  { src = 'https://github.com/folke/which-key.nvim' },
+  { src = 'https://github.com/folke/trouble.nvim' },
+  { src = 'https://github.com/mikavilpas/yazi.nvim' },
+  { src = 'https://github.com/nvim-lua/plenary.nvim' },
+  { src = 'https://github.com/MagicDuck/grug-far.nvim' },
 
   -- treesitter
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
   -- ui
   { src = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim' },
@@ -34,6 +42,8 @@ vim.pack.add({
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
   { src = 'https://github.com/akinsho/bufferline.nvim' },
   { src = 'https://github.com/tiagovla/scope.nvim' },
+  { src = 'https://github.com/MunifTanjim/nui.nvim' },
+  { src = 'https://github.com/folke/noice.nvim' },
   { src = 'https://github.com/saghen/blink.indent', version = 'v2.1.0' },
 }, {
   -- prevent packadd! or packadd like this to allow on_require handler to load plugin spec

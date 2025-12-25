@@ -19,20 +19,22 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true, desc = '
 -- vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { silent = true, desc = "diagnostics_explorer" })
 
 -- mini keybinds
-vim.keymap.set('n', '<leader>mf', '<cmd>:lua MiniFiles.open()<cr>', { desc = 'Open file explorer(default)' })
-vim.keymap.set('n', '<leader>pf', '<cmd>Pick files<cr>', { desc = 'Open file pick' })
-vim.keymap.set('n', '<leader>pg', "<cmd>:Pick files tool='git'<cr>", { desc = 'Open file explorer(git)' })
-vim.keymap.set('n', '<leader>pb', '<cmd>:Pick buffers<cr>', { desc = 'Open buffers explorer' })
-vim.keymap.set('n', '<leader>pd', '<cmd>:Pick diagnostic<cr>', { desc = 'Open diagnostic explorer' })
-vim.keymap.set('n', '<leader>pe', '<cmd>:Pick explorer<cr>', { desc = 'Open explorer' })
-vim.keymap.set('n', '<leader>pr', '<cmd>:Pick grep_live<cr>', { desc = 'Open grep_live explorer' })
-vim.keymap.set('n', '<leader>ph', '<cmd>:Pick help<cr>', { desc = 'Open help explorer' })
-
-vim.keymap.set('n', '<leader>bc', function()
-  require('mini.bufremove').delete(0, false)
-end, { desc = 'Delete Buffer' })
-
+-- vim.keymap.set('n', '<leader>mf', '<cmd>:lua MiniFiles.open()<cr>', { desc = 'Open file explorer(default)' })
+-- vim.keymap.set('n', '<leader>pf', '<cmd>Pick files<cr>', { desc = 'Open file pick' })
+-- vim.keymap.set('n', '<leader>pg', "<cmd>:Pick files tool='git'<cr>", { desc = 'Open file explorer(git)' })
+-- vim.keymap.set('n', '<leader>pb', '<cmd>:Pick buffers<cr>', { desc = 'Open buffers explorer' })
+-- vim.keymap.set('n', '<leader>pd', '<cmd>:Pick diagnostic<cr>', { desc = 'Open diagnostic explorer' })
+-- vim.keymap.set('n', '<leader>pe', '<cmd>:Pick explorer<cr>', { desc = 'Open explorer' })
+-- vim.keymap.set('n', '<leader>pr', '<cmd>:Pick grep_live<cr>', { desc = 'Open grep_live explorer' })
+-- vim.keymap.set('n', '<leader>ph', '<cmd>:Pick help<cr>', { desc = 'Open help explorer' })
+--
+-- vim.keymap.set('n', '<leader>bc', function()
+--   require('mini.bufremove').delete(0, false)
+-- end, { desc = 'Delete Buffer' })
+--
 -- diagnostics
 vim.keymap.set('n', '<leader>de', '<cmd>TinyInlineDiag enable<cr>', { desc = 'Enable diagnostics' })
 vim.keymap.set('n', '<leader>dd', '<cmd>TinyInlineDiag disable<cr>', { desc = 'Disable diagnostics' })
 vim.keymap.set('n', '<leader>dt', '<cmd>TinyInlineDiag toggle<cr>', { desc = 'Toggle diagnostics' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Action' })

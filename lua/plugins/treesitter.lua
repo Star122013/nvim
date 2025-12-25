@@ -14,7 +14,6 @@ local TSInstalled = {
 return {
   {
     'nvim-treesitter',
-    build = ':TSUpdate',
     lazy = false,
     after = function()
       require('nvim-treesitter').setup {

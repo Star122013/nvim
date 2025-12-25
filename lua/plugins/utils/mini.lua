@@ -4,6 +4,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     after = function()
       require('mini.pairs').setup()
+      require('mini.ai').setup()
     end,
   },
 }
