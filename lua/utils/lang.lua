@@ -6,6 +6,10 @@ local M = {}
 ---@field root_markers? string[] Optional markers to find the project root. Defaults to {'.git'}.
 ---@field settings? table Optional settings to send to the server.
 ---@field init_options? table Optional initialization options for the server.
+---@field capabilities? table
+---@field on_attach? fun(client: vim.lsp.Client, bufnr: integer)
+---@field on_init? fun(client: vim.lsp.Client, init_result: table)
+---@field before_init? fun(params: table, config: table)
 
 ---@class LangConfig
 ---@field treesitter? string[]
@@ -67,6 +71,10 @@ function M.setup(config)
             root_dir = root,
             settings = lsp_conf.settings,
             init_options = lsp_conf.init_options,
+            capabilities = lsp_conf.capabilities,
+            on_attach = lsp_conf.on_attach,
+            on_init = lsp_conf.on_init,
+            before_init = lsp_conf.before_init,
           }, { bufnr = args.buf })
         end,
       })
