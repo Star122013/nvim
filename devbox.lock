@@ -1,0 +1,217 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "emmylua-check@latest": {
+      "last_modified": "2025-12-13T16:46:16Z",
+      "resolved": "github:NixOS/nixpkgs/23735a82a828372c4ef92c660864e82fbe2f5fbe#emmylua-check",
+      "source": "devbox-search",
+      "version": "0.18.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/j38nfw3prwj7iy4j90v27225h9q4gsd0-emmylua_check-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/j38nfw3prwj7iy4j90v27225h9q4gsd0-emmylua_check-0.18.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d4xrra8f5iq0gsn4c4a3f5wkqc7gchf4-emmylua_check-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d4xrra8f5iq0gsn4c4a3f5wkqc7gchf4-emmylua_check-0.18.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4z3cx9r4irc8n8y14xwizxc51jbz5737-emmylua_check-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4z3cx9r4irc8n8y14xwizxc51jbz5737-emmylua_check-0.18.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jzsk529kbcqixs41frj2jprlh7a2rh6b-emmylua_check-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jzsk529kbcqixs41frj2jprlh7a2rh6b-emmylua_check-0.18.0"
+        }
+      }
+    },
+    "emmylua-ls@latest": {
+      "last_modified": "2025-12-09T08:49:39Z",
+      "resolved": "github:NixOS/nixpkgs/677fbe97984e7af3175b6c121f3c39ee5c8d62c9#emmylua-ls",
+      "source": "devbox-search",
+      "version": "0.18.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s4v0qk03cjzjicq5wjb8yh25z2rw1cj3-emmylua_ls-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/s4v0qk03cjzjicq5wjb8yh25z2rw1cj3-emmylua_ls-0.18.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r72x66sbs3hk7xjvvym9ha46gxaggsfy-emmylua_ls-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/r72x66sbs3hk7xjvvym9ha46gxaggsfy-emmylua_ls-0.18.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wn70xy4a0dg0rz3kndcxwd7c7k6prvh3-emmylua_ls-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wn70xy4a0dg0rz3kndcxwd7c7k6prvh3-emmylua_ls-0.18.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/i2rvxdp6vzmc80j494h9xwf48xx7x98j-emmylua_ls-0.18.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/i2rvxdp6vzmc80j494h9xwf48xx7x98j-emmylua_ls-0.18.0"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2025-12-02T02:29:13Z",
+      "resolved": "github:NixOS/nixpkgs/f720de59066162ee879adcc8c79e15c51fe6bfb4?lastModified=1764642553"
+    },
+    "lua@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#lua",
+      "source": "devbox-search",
+      "version": "5.2.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/js4iznnjf19qy3m5nihaz9x6ill5128a-lua-5.2.4",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/r23dyss1yw0vna9wykc1wdajz797s1hy-lua-5.2.4-doc"
+            }
+          ],
+          "store_path": "/nix/store/js4iznnjf19qy3m5nihaz9x6ill5128a-lua-5.2.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f4dcablqjgrjh2jfjgvy9z7v160q6fs0-lua-5.2.4",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ds6g7m74phs90w1cwcgwxvvk4m6a8n93-lua-5.2.4-doc"
+            }
+          ],
+          "store_path": "/nix/store/f4dcablqjgrjh2jfjgvy9z7v160q6fs0-lua-5.2.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/27dw25yvi6qw4sz7sxkm0p5bsgmfdlyw-lua-5.2.4",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/lhs602rdnikz224pihlw4bkrvj6zzvpn-lua-5.2.4-doc"
+            }
+          ],
+          "store_path": "/nix/store/27dw25yvi6qw4sz7sxkm0p5bsgmfdlyw-lua-5.2.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6cz3r51xls9hrpz7ln5zplr5pj230rib-lua-5.2.4",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/2c1fc35fpjzgavcb36dh7r96kprmv08k-lua-5.2.4-doc"
+            }
+          ],
+          "store_path": "/nix/store/6cz3r51xls9hrpz7ln5zplr5pj230rib-lua-5.2.4"
+        }
+      }
+    },
+    "stylua@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#stylua",
+      "source": "devbox-search",
+      "version": "2.3.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d7cwf7lfvr99p4qmbzz7gdpgz7ln7q01-stylua-2.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d7cwf7lfvr99p4qmbzz7gdpgz7ln7q01-stylua-2.3.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hw0sqq3rrqd5rcjv9sax2v2gm7g837ar-stylua-2.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hw0sqq3rrqd5rcjv9sax2v2gm7g837ar-stylua-2.3.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sf3hxyw0qqd69dflrs6jk7ns0xfq1vx6-stylua-2.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sf3hxyw0qqd69dflrs6jk7ns0xfq1vx6-stylua-2.3.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/84jvcc25xzjg1k9a0nkci1dkq8886ixq-stylua-2.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/84jvcc25xzjg1k9a0nkci1dkq8886ixq-stylua-2.3.1"
+        }
+      }
+    }
+  }
+}
