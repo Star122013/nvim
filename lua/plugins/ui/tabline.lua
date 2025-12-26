@@ -1,6 +1,6 @@
 return {
   'nanozuki/tabby.nvim',
-  dependencies = 'nvim-mini/mini.icons',
+  dependencies = { 'nvim-mini/mini.icons', 'nvim-tree/nvim-web-devicons' },
   event = 'VeryLazy',
   config = function()
     local theme = {
