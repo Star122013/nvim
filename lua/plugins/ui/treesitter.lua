@@ -43,6 +43,7 @@ return {
       'ninja',
       'markdown',
       'markdown_inline',
+      'qmljs',
     }
   },
   config = function(_, opts)
