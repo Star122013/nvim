@@ -28,7 +28,7 @@ return {
         menu = {
           border = 'rounded',
           draw = {
-            columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+            columns = { { "label", gap = 1 }, { "kind_icon", "kind" } },
             components = {
               label = {
                 text = function(ctx)

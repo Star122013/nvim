@@ -11,20 +11,20 @@ return {
           light = 'latte',
           dark = 'mocha',
         },
-        transparent_background = true, -- disables setting the background color.
+        transparent_background = false, -- disables setting the background color.
         float = {
-          transparent = true,          -- enable transparent floating windows
-          solid = false,               -- use solid styling for floating windows, see |winborder|
+          transparent = true,           -- enable transparent floating windows
+          solid = false,                -- use solid styling for floating windows, see |winborder|
         },
-        show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
-        term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
+        show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
+        term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
-          enabled = false,             -- dims the background color of inactive window
+          enabled = false,              -- dims the background color of inactive window
           shade = 'dark',
-          percentage = 0.15,           -- percentage of the shade to apply to the inactive window
+          percentage = 0.15,            -- percentage of the shade to apply to the inactive window
         },
-        styles = {                     -- Handles the styles of general hi groups (see `:h highlight-args`):
-          comments = { 'italic' },     -- Change the style of comments
+        styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { 'italic' },      -- Change the style of comments
           conditionals = { 'italic' },
         },
         lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
@@ -63,46 +63,31 @@ return {
       vim.api.nvim_set_hl(0, 'SnacksRainbow7', { fg = colors.teal })
     end,
   },
-
   -- {
-  --   "ellisonleao/gruvbox.nvim",
-  --   priority = 1000,
+  --   "neanias/everforest-nvim",
+  --   version = false,
+  --   lazy = false,
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- Optional; default configuration will be used if setup isn't called.
   --   config = function()
-  --     require("gruvbox").setup({
-  --       terminal_colors = true, -- 添加终端颜色
-  --       undercurl = true,
-  --       underline = true,
-  --       bold = true,
-  --       italic = {
-  --         strings = true,
-  --         emphasis = true,
-  --         comments = true,
-  --         operators = false,
-  --         folds = true,
-  --       },
-  --       strikethrough = true,
-  --       invert_selection = false,
-  --       invert_signs = false,
-  --       invert_tabline = false,
-  --       invert_intend_guides = false,
-  --       inverse = true,    -- 反转背景以突出搜索等
-  --       contrast = "soft", -- 可以设为 "soft", "medium", "hard"
-  --       palette_overrides = {},
-  --       overrides = {},
-  --       dim_inactive = false,
-  --       transparent_mode = true,
+  --     require("everforest").setup({
+  --       -- Your config here
+  --       background = "soft",
+  --       transparent_background_level = 0,
+  --       italics = true,
   --     })
-  --     vim.cmd 'colorscheme gruvbox'
   --
-  --     local colors = require("gruvbox").palette
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow1', { fg = colors.bright_red })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow2', { fg = colors.bright_yellow })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow3', { fg = colors.bright_blue })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow4', { fg = colors.bright_orange })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow5', { fg = colors.bright_green })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow6', { fg = colors.bright_purple })
-  --     vim.api.nvim_set_hl(0, 'SnacksRainbow7', { fg = colors.bright_aqua })
-  --   end
+  --     vim.cmd 'colorscheme everforest'
+  --
+  --
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow1', { fg = "#E67E80" })
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow2', { fg = "#DBBC7F" })
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow3', { fg = "#7FBBB3" })
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow4', { fg = "#E69875" }) -- peach → orange
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow5', { fg = "#A7C080" })
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow6', { fg = "#D699B6" }) -- mauve → purple
+  --     vim.api.nvim_set_hl(0, 'SnacksRainbow7', { fg = "#83C092" }) -- teal → aqua
+  --   end,
   -- },
 
   {
