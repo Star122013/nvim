@@ -18,7 +18,7 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    ft = { "rust" },
+    lazy = false,
     config = function()
       vim.g.rustaceanvim = {
         server = {

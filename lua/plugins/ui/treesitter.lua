@@ -44,6 +44,7 @@ return {
       'markdown',
       'markdown_inline',
       'qmljs',
+      'norg'
     }
   },
   config = function(_, opts)
