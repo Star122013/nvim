@@ -1,5 +1,5 @@
 return require("utils.lang").setup {
-  treesitter = { "json", "jsonc" },
+  treesitter = { "json" },
 
   format = {
     json = { "biome" },

@@ -22,7 +22,6 @@ return {
       'fish',
       'awk',
       'kdl',
-      'dosini',
       'diff',
       'cmake',
       'git_config',
@@ -44,7 +43,6 @@ return {
       'markdown',
       'markdown_inline',
       'qmljs',
-      'norg'
     }
   },
   config = function(_, opts)

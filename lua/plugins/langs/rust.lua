@@ -47,6 +47,10 @@ return {
                 },
               },
               -- Add clippy lints for Rust if using rust-analyzer
+              check = {
+                command = "clippy",
+                extraArgs = { "--all-targets" },
+              },
               checkOnSave = true,
               -- Enable diagnostics if using rust-analyzer
               diagnostics = {
@@ -72,6 +76,19 @@ return {
                   "venv",
                   ".venv",
                 },
+              },
+              add_return_type = {
+                enable = true
+              },
+              inlayHints = {
+                showParameterNames = true,
+                parameterHintsPrefix = "<- ",
+                otherHintsPrefix = "=> ",
+                bindingModeHints = { enable = false },  -- 比如不显示 &mut 这种
+                chainingHints = { enable = false },     -- 链式调用的类型提示
+                closingBraceHints = { enable = false }, -- 不显示大括号结尾的提示
+                parameterHints = { enable = true },     -- 参数名提示 (如 buf:)
+                typeHints = { enable = true },          -- 变量类型提示 (如 :u32)
               },
             },
           },

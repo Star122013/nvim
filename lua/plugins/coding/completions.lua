@@ -1,7 +1,7 @@
 return {
   'saghen/blink.cmp',
   version = '1.*',
-  event = { 'InsertEnter', 'CmdlineEnter' },
+  event = 'LazyFile',
   dependencies = {
     'rafamadriz/friendly-snippets',
     'xzbdmw/colorful-menu.nvim',
@@ -54,6 +54,16 @@ return {
           },
         },
       },
+
+      sources = {
+        -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+
+        per_filetype = {
+          markdown = { 'markview', 'lsp', 'path', 'snippets', 'buffer' },
+        },
+      },
+
       cmdline = {
         completion = {
           menu = {

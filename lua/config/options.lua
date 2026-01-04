@@ -19,6 +19,7 @@ vim.schedule(function()
 end)
 
 vim.opt.undofile = true
+
 vim.opt.fillchars:append { eob = ' ' }
 
 vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
